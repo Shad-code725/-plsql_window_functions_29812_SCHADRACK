@@ -204,3 +204,6 @@ We recommend focusing on top customers with loyalty programs, re‑engaging decl
 - SQL JOINs Guide (W3Schools): https://www.w3schools.com/sql/sql_join.asp
 - https://youtu.be/CxpOJFz3i4E?si=wYX7nHVm4P29D48J
 - https://youtu.be/lj2nrKsU5pc?si=4ZCdjuGhQXctevuJ
+
+
+“All sources were properly cited. Implementations and analysis represent original work. No AIgenerated content was copied without attribution or adaptation.”
