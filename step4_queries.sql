@@ -15,3 +15,9 @@ SELECT f.flight_id, f.route, b.booking_id, b.amount_paid
 FROM Flights f
 RIGHT JOIN Bookings b
 ON f.flight_id = b.flight_id;
+
+-- FULL OUTER JOIN: Flights & Bookings
+SELECT f.flight_id, f.route, b.booking_id, b.amount_paid
+FROM Flights f
+FULL OUTER JOIN Bookings b
+ON f.flight_id = b.flight_id;
