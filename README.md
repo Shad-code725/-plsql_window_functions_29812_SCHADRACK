@@ -96,3 +96,9 @@ Step 4: SQL JOIN Queries
 **Result:**
 ![LEFT JOIN Result](Screenshots/Left_Join.PNG)
 
+## RIGHT JOIN
+
+**Result:**
+![RIGHT JOIN Result](Screenshots/right_join.PNG)
+
+
