@@ -86,5 +86,13 @@ Below is the screenshot showing all tables created in the database:
 
 Step 4: SQL JOIN Queries
 
+## INNER JOIN 
+
 **Result:**
-![INNER JOIN Result](screenshots/inner_join.png)
+![INNER JOIN Result](Screenshots/inner_join.png)
+
+## LEFT JOIN
+
+**Result:**
+![LEFT JOIN Result](Screenshots/Left_Join.PNG)
+
