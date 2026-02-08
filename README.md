@@ -30,3 +30,49 @@ The project will achieve the following five measurable goals using SQL Window Fu
 
 5. **Three-month moving average (AVG OVER):**  
    Compute rolling averages of revenue across three months using `AVG() OVER()`.
+
+## Step 3: Database Schema Design
+
+The airline database schema consists of five related tables:
+
+### Customers
+- customer_id (PK)
+- name
+- region
+- email
+
+### Flights
+- flight_id (PK)
+- route
+- departure_date
+- ticket_price
+- departure_airport_id (FK → Airports.airport_id)
+- arrival_airport_id (FK → Airports.airport_id)
+
+### Bookings
+- booking_id (PK)
+- customer_id (FK → Customers.customer_id)
+- flight_id (FK → Flights.flight_id)
+- booking_date
+- amount_paid
+
+### Airports
+- airport_id (PK)
+- name
+- city
+- country
+
+### Employees
+- employee_id (PK)
+- name
+- role
+
+## Assignment
+
+- assignment_id (PK)
+- employee_id (FK → Employees.employee_id)
+- flight_id (FK → Flights.flight_id)
+### ER Diagram
+
+<img width="1891" height="1191" alt="Airport Sys ERD" src="https://github.com/user-attachments/assets/385d33bb-0393-44be-b136-091b6f3becec" />
+
