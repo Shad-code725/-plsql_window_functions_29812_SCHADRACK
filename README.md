@@ -114,3 +114,23 @@ Step 4: SQL JOIN Queries
 Note: Initially, our Customers table did not contain multiple customers sharing the same region.
 To demonstrate the SELF JOIN query, we inserted two sample customers (Alice and Bob) with the same region value.
 This allowed the query to return meaningful results, showing how pairs of customers can be matched when they share a region.
+
+
+STEP 5:Window Functions Implementation
+
+## RANKING
+
+-- Ranking Functions: ROW_NUMBER, RANK, DENSE_RANK, PERCENT_RANK
+SELECT customer_id,
+SUM(amount_paid) AS total_revenue,
+ROW_NUMBER() OVER (ORDER BY SUM(amount_paid) DESC) AS row_num,
+RANK() OVER (ORDER BY SUM(amount_paid) DESC) AS rank,
+DENSE_RANK() OVER (ORDER BY SUM(amount_paid) DESC) AS dense_rank,
+PERCENT_RANK() OVER (ORDER BY SUM(amount_paid) DESC) AS percent_rank
+FROM Bookings
+GROUP BY customer_id;
+
+![RANKING Result](Screenshots/Step_5_shots/ranking.PNG)
+
+Interpretation:  
+This query ranks customers by revenue. ROW_NUMBER assigns a unique sequence, RANK allows ties, DENSE_RANK avoids gaps, and PERCENT_RANK shows relative standing. Useful for identifying top customers.
