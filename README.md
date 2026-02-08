@@ -101,4 +101,7 @@ Step 4: SQL JOIN Queries
 **Result:**
 ![RIGHT JOIN Result](Screenshots/right_join.PNG)
 
+## FULL OUTER JOIN
 
+**Result:**
+![FULL OUTER JOIN Result](Screenshots/full_outer_join.PNG)
