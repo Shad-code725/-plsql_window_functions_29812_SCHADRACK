@@ -180,3 +180,27 @@ GROUP BY customer_id;
 
 Interpretation:  
 NTILE(4) divides customers into quartiles based on revenue. CUME_DIST shows the proportion of customers below or equal to a given revenue. This helps segment customers into tiers.
+
+
+## Step 7: Results Analysis
+
+### Descriptive
+- The JOIN queries revealed how flights, bookings, and customers are connected.
+- Ranking functions identified the top‑revenue customers.
+- Aggregate window functions showed running totals and averages, highlighting payment trends over time.
+- Navigation functions compared period‑to‑period changes, showing growth or decline in customer payments.
+- Distribution functions segmented customers into quartiles, clarifying tiers of customer value.
+
+### Diagnostic
+Revenue concentration among a few customers explains the ranking results. Running totals highlighted fluctuations tied to booking frequency. Navigation functions showed growth/decline patterns, while segmentation reflected differences in loyalty and purchasing power.
+
+### Prescriptive
+We recommend focusing on top customers with loyalty programs, re‑engaging declining spenders, tailoring marketing by quartile, and monitoring trends to optimize pricing and capacity.
+
+## Step 8: References
+
+- https://mrcet.com/downloads/digital_notes/CSE/II%20Year/DATA%20BASE%20MANAGEMENT%20SYSTEMS(%20R18A0510).pdf
+- PostgreSQL Tutorial (Window Functions): https://www.postgresqltutorial.com/postgresql-window-function/
+- SQL JOINs Guide (W3Schools): https://www.w3schools.com/sql/sql_join.asp
+- https://youtu.be/CxpOJFz3i4E?si=wYX7nHVm4P29D48J
+- https://youtu.be/lj2nrKsU5pc?si=4ZCdjuGhQXctevuJ
