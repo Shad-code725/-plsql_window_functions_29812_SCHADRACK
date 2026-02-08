@@ -134,3 +134,49 @@ GROUP BY customer_id;
 
 Interpretation:  
 This query ranks customers by revenue. ROW_NUMBER assigns a unique sequence, RANK allows ties, DENSE_RANK avoids gaps, and PERCENT_RANK shows relative standing. Useful for identifying top customers.
+
+## Aggregate Window Functions
+
+-- Aggregate Window Functions: SUM, AVG, MIN, MAX with ROWS and RANGE
+SELECT booking_id,
+amount_paid,
+SUM(amount_paid) OVER (ORDER BY booking_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_total_rows,
+AVG(amount_paid) OVER (ORDER BY booking_id RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_avg_range,
+MIN(amount_paid) OVER (ORDER BY booking_id) AS min_paid,
+MAX(amount_paid) OVER (ORDER BY booking_id) AS max_paid
+FROM Bookings;
+
+![AGGREGATE Result](Screenshots/step_5_shots/aggregate.PNG)
+
+Interpretation:  
+This query calculates running totals and averages across bookings. ROWS uses physical row boundaries, while RANGE uses value ranges. It helps track payment trends over time.
+
+## Navigation Functions
+
+-- Navigation Functions: LAG and LEAD
+SELECT booking_id,
+amount_paid,
+LAG(amount_paid, 1)  OVER (ORDER BY booking_id) AS prev_payment,
+LEAD(amount_paid, 1) OVER (ORDER BY booking_id) AS next_payment,
+amount_paid - LAG(amount_paid, 1) OVER (ORDER BY booking_id) AS growth_vs_prev
+FROM Bookings;
+
+![NAVIGATION Result](Screenshots/step_5_shots/navigation.PNG)
+
+Interpretation:  
+LAG looks back, LEAD looks forward. This query compares each booking’s payment to the previous one, showing growth or decline. Useful for analyzing customer spending changes.
+
+## Distribution Functions
+
+-- Distribution Functions: NTILE and CUME_DIST
+SELECT customer_id,
+SUM(amount_paid) AS total_revenue,
+NTILE(4) OVER (ORDER BY SUM(amount_paid) DESC) AS quartile,
+CUME_DIST() OVER (ORDER BY SUM(amount_paid) DESC) AS cumulative_distribution
+FROM Bookings
+GROUP BY customer_id;
+
+![DISTRIBUTION Result](Screenshots/step_5_shots/distribution.PNG)
+
+Interpretation:  
+NTILE(4) divides customers into quartiles based on revenue. CUME_DIST shows the proportion of customers below or equal to a given revenue. This helps segment customers into tiers.
