@@ -105,3 +105,12 @@ Step 4: SQL JOIN Queries
 
 **Result:**
 ![FULL OUTER JOIN Result](Screenshots/full_outer_join.PNG)
+
+## SELF JOIN
+
+**Result:**
+![SELF JOIN Result](Screenshots/self_join.PNG)
+
+Note: Initially, our Customers table did not contain multiple customers sharing the same region.
+To demonstrate the SELF JOIN query, we inserted two sample customers (Alice and Bob) with the same region value.
+This allowed the query to return meaningful results, showing how pairs of customers can be matched when they share a region.
