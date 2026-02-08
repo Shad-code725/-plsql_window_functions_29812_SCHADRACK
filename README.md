@@ -83,3 +83,8 @@ The airline database schema consists of five related tables:
 Below is the screenshot showing all tables created in the database:
 
 <img width="439" height="261" alt="image" src="https://github.com/user-attachments/assets/a6049e02-d905-40b1-8536-a79ff033fe56" />
+
+Step 4: SQL JOIN Queries
+
+**Result:**
+![INNER JOIN Result](screenshots/inner_join.png)
