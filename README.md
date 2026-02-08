@@ -64,8 +64,10 @@ The airline database schema consists of five related tables:
 
 ### Employees
 - employee_id (PK)
-- name
+- 1st_name
+- 2nd_name
 - role
+-  assignment_flight_id (FK)
 
 ## Assignment
 
