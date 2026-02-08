@@ -130,7 +130,7 @@ PERCENT_RANK() OVER (ORDER BY SUM(amount_paid) DESC) AS percent_rank
 FROM Bookings
 GROUP BY customer_id;
 
-![RANKING Result](Screenshots/Step_5_shots/ranking.PNG)
+![RANKING Result](Screenshots/step_5_shots/ranking.PNG)
 
 Interpretation:  
 This query ranks customers by revenue. ROW_NUMBER assigns a unique sequence, RANK allows ties, DENSE_RANK avoids gaps, and PERCENT_RANK shows relative standing. Useful for identifying top customers.
