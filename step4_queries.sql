@@ -9,3 +9,9 @@ SELECT f.flight_id, f.route, b.booking_id, b.amount_paid
 FROM Flights f
 LEFT JOIN Bookings b
 ON f.flight_id = b.flight_id;
+
+-- RIGHT JOIN: Flights & Bookings
+SELECT f.flight_id, f.route, b.booking_id, b.amount_paid
+FROM Flights f
+RIGHT JOIN Bookings b
+ON f.flight_id = b.flight_id;
